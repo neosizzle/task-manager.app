@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign up</title>
+
+    <!--styling -->
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.css">
+    <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.theme.css">
+    <link rel="stylesheet" href="assets/datepicker/jquery.datetimepicker.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+        <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.9/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.9/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.2.9/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <!--helper js-->
+    <script src = "./js/signUp.js"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+
+
+  
+      <!-- form -->
+      <section class="form6 cid-sqEePaZPfR" id="form6-n">
+        
+        
+        <div class="container-fluid">
+            <div class="mbr-section-head">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Register</strong></h3>
+                <a href = "index.html"><h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">or click here to go back</h4></a>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-8 mx-auto mbr-form" >
+                    <form onsubmit="return false"  class="mbr-form form-with-styler mx-auto" data-form-title="Form Name">
+                        <div class="">
+                            <div hidden="hidden" id = "successMessage"  class="alert alert-success col-12">Thanks for filling
+                                out the form!</div>
+                            <div hidden="hidden" id = "warningMessage" class="alert alert-danger col-12">Oops...! some
+                                problem!</div>
+                        </div>
+                        <div class="dragArea row">
+                            
+                            <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="email">
+                                <input type="email" name="email" data-form-field="email" class="form-control" value="" placeholder="Email" id="email">
+                            </div>
+                            <div data-for="password" class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                <input type="password" name="password" placeholder="Password" class="form-control" value="" id="password">
+                            </div>
+                            <div class="col-auto mbr-section-btn align-center"><button onclick = "emailSignup()" class="btn btn-primary display-4">Submit</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/j" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Create your own <a href="https://mobirise.site/y" style="color:#aaa;">site</a> with Mobirise</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/formstyler/jquery.formstyler.js"></script>  <script src="assets/formstyler/jquery.formstyler.min.js"></script>  <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>  <script src="assets/theme/js/script.js"></script> 
+      
+
+
+
+  </body>
+</html>
